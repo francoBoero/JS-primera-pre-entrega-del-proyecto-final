@@ -11,110 +11,64 @@ let nombreCompleto = nombre + " " + apellido
         alert("bienvenido don nadie")
         
     }
-    /*let ellecion = prompt("elija alguna de esta opcion: prdocuto 1:TV de 45 pulgadas, precio:50000. Prducto2:  zapatllas nike jordan4, precio:30000.  Producto3: remera del psg, precio:15000")
-    
-    
-    if (eleccion === 1){
-
-    }
-   */
+  
   let toal = 0
- /* const productos = [
+  
+ const productos = [
     {id: 1, prdocuto: "TV de 45 pulgadas", precio:50000},     {id: 2, prducto: " zapatllas nike jordan4", precio:30000}, {id: 3, producto: "remera del psg", precio:15000},
-            ]*/
+            ]
            
     carrito = []
     
-    function compra(){
-        let uno = {id: 1, prdocuto: "TV de 45 pulgadas", precio:50000}
-        let dos = {id: 2, prducto: " zapatllas nike jordan4", precio:30000}
-        let tres = {id: 3, producto: "remera del psg", precio:15000}
-        let option =  prompt(`elija un producto:
-        uno: TV de 45 pulgadas $50000
-        dos: zapatllas nike jordan4 $30000
-        tres:remera del psg $15000
-        si no desea nada escriba: NO`);
-        switch(option){
-            case "uno": 
-            return carrito.push(uno);
-                alert("se ha agregado un producto a su carrito");
-               
-
-                break;
-            case "dos": 
-            return carrito.push(dos);
-                  alert("se ha agregado un producto a su carrito");
-                
-                break;
-            case "tres": 
-            return carrito.push(tres);
-            alert("se ha agregado un producto a su carrito");
-            
-                break;
-            
-            default: return alert("re seco andas o que?")   
-                break;
+    let uno = {id: 1, prdocuto: "TV de 45 pulgadas", precio:50000}
+    let dos = {id: 2, prducto: " zapatllas nike jordan4", precio:30000}
+    let tres = {id: 3, producto: "remera del psg", precio:15000}
     
-        }
-    }
-    compra()
- 
- 
- 
-
-    for (const producto of carrito){
-        console.log(carrito.id);
-        console.log(carrito.prodcuto);
-        console.log(carrito.precio)
-    
-    }
-        
-   
- let total = carrito.forEach((producto)=>(precio += carrito.precio))
-    alert (`el total a pagar es de: ${total}`)
-    
+    let cantidad = 0;
    
     
-    
-  
-    
-    
+   
 
-    
+ 
 
 
-
-/*
- function compra(){
-    let uno = (50000)
-    let dos = (30000)
-    let tres = (15000)
-    let option =  prompt(`elija un producto:
-    uno: TV de 45 pulgadas $50000
+do{
+    let entrada = prompt (`elija un producto:
+    uno: TV  de 45 pulgadas $50000
     dos: zapatllas nike jordan4 $30000
-    tres:remera del psg $15000`);
-    switch(option){
-        case "uno":
-            return console.log(`el precio a pagar es de ${uno} pesos`);
-            break;
-        case "dos":
-            return console.log(`el precio a pagar es de ${dos}pesos`);
-            break;
-        case "tres":
-            return console.log(`el precio a pagar es de ${tres}pesos`);
-            break;
-        
-        default:
-            return alert("re seco andas o que?")   
-            break;
+    tres:remera del psg $15000
+    si no desea nada escriba: NO`)
+   
 
+    if (entrada == "uno") {
+        carrito.push(uno);
+        cantidad += 1
+    } if(entrada == "dos"){
+        carrito.push(dos);
+        cantidad += 1
+
+
+    } 
+    if(entrada == "tres"){
+        carrito.push(tres);
+        cantidad += 1
+
+
+ 
+
+    } else {
+        console.log("no sumaste nada al carrito")
     }
    
-     
-    
-    }
-    compra()
-    */
+    console.log(carrito)
+}while( cantidad !== 4)
+
+
+
+const suma = carrito.map(producto => producto.precio).reduce((prev, curr) => prev + curr, 0);
+alert("tu total a pagar es de:" + " " + suma + " " + "pesos");
+
+
 
 
 
